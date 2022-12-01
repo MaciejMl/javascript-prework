@@ -5,12 +5,14 @@ console.log('Wylosowana liczba to: ' + randomNumber);
 let computerMove = 'Nieznany ruch';
 
 if (randomNumber == 1) {
-  computerMove = `kamień`;
+  computerMove = 'kamień';
 } else if (randomNumber == 2) {
-  computerMove = `papier`;
+  computerMove = 'papier';
 } else if (randomNumber == 3) {
-  computerMove = `nożyce`;
-} else computerMove;
+  computerMove = 'nożyce';
+} else {
+  computerMove;
+}
 
 printMessage('Mój ruch to: ' + computerMove);
 
@@ -26,7 +28,9 @@ if (playerInput == '1') {
   playerMove = 'papier';
 } else if (playerInput == '3') {
   playerMove = 'nożyce';
-} else playerMove;
+} else {
+  playerMove;
+}
 
 printMessage('Twój ruch to: ' + playerMove);
 
@@ -40,4 +44,6 @@ if (playerMove == 'nieznany ruch') {
   (computerMove == 'nożyce' && playerMove == 'kamień')
 ) {
   printMessage('Wygrałeś!');
-} else printMessage('Ja wygrałem!');
+} else {
+  printMessage('Ja wygrałem!');
+}
