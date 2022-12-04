@@ -2,18 +2,100 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kamień, papier, nożyce</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.css"
+      integrity="sha512-FA9cIbtlP61W0PRtX36P6CGRy0vZs0C2Uw26Q1cMmj3xwhftftymr0sj8/YeezDnRwL9wtWw8ZwtCiTDXlXGjQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="container">
-      <div id="buttons">
-        <button id="play-rock">KAMIEŃ</button>
-        <button id="play-paper">PAPIER</button>
-        <button id="play-scissors">NOŻYCE</button>
+    <section class="splash">
+      <div class="container">
+        <div class="row">
+          <div class="splash-img">
+            <img src="" alt="" />
+          </div>
+          <div class="splash-title">
+            <h1>GAME</h1>
+            <h2>ROCK, PAPER, SCISSORS</h2>
+            <h3>enjoy..</h3>
+          </div>
+        </div>
       </div>
-      <div id="messages"></div>
-    </div>
+    </section>
+
+    <section class="rules">
+      <h2>RULES:</h2>
+      <div class="container">
+        <div class="row">
+          <a
+            >Rock, paper, scissors is a simple oldschool game. Almost everybody
+            knows it. Few simple rules. You're playing witj computer, "his"
+            choices are random. You have to decide by yourself: 3 buttons, with
+            3 choices: "rock", "paper" and "scissors". Depend on your choice you
+            will win or lose. Rules are simple: paper wins against rock, rock
+            wins against sissors and scissor wins against paper. Good choice
+            you'll get a point, draw got nothing. Good lack.</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="game">
+      <div class="container">
+        <div class="row">
+          <div id="buttons">
+            <button id="play-rock">KAMIEŃ</button>
+            <button id="play-paper">PAPIER</button>
+            <button id="play-scissors">NOŻYCE</button>
+          </div>
+
+          <div class="game-results">
+            <h3>CPU:</h3>
+            <h3>YOU:</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container">
+        <div class="row">
+          <div id="messages"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="copyrights">
+            <a><i class="fa-regular fa-copyright"></i> Made by Maciej M</a>
+          </div>
+          <div class="social-icons">
+            <ul>
+              <li>
+                <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-brands fa-pinterest-p"></i> Pinterest</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="js/functions.js"></script>
     <script src="js/script.js"></script>
   </body>

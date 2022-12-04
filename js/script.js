@@ -36,11 +36,11 @@ function playGame(playerInput) {
 
     if (argPlayerMove == 'nieznany ruch') {
       printMessage('Jeszcze raz, nieznany ruch!');
-      return 'nieznany ruch!';
+      //return 'nieznany ruch!';
     }
     if (argComputerMove == argPlayerMove) {
       printMessage('Remis!');
-      return 'Remis!';
+      //return 'Remis!';
     }
     if (
       (argComputerMove == 'kamień' && argPlayerMove == 'papier') ||
@@ -48,10 +48,10 @@ function playGame(playerInput) {
       (argComputerMove == 'nożyce' && argPlayerMove == 'kamień')
     ) {
       printMessage('Wygrałeś!');
-      return 'Wygrałeś!';
+      //return 'Wygrałeś!';
     } else {
       printMessage('Ja wygrałem!');
-      return 'Ja wygrałem!';
+      //return 'Ja wygrałem!';
     }
   }
 
