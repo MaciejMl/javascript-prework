@@ -1,17 +1,13 @@
 function playGame(playerInput) {
   clearMessages();
+
   let randomNumber = Math.floor(Math.random() * 3 + 1);
-  let computerMove = getMoveName(randomNumber);
-  let playerMove = getMoveName(playerInput);
-  /*let playerInput = prompt(
-    'Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce'
-  );*/
 
   console.log('Wylosowana liczba to: ' + randomNumber);
 
   console.log('Gracz wpisał: ' + playerInput);
 
-  function getMoveName(argMoveId) {
+  const getMoveName = function (argMoveId) {
     if (argMoveId == 1) {
       return 'kamień';
     }
@@ -24,9 +20,12 @@ function playGame(playerInput) {
 
     printMessage('Nie znam ruchu o Id ' + argMoveId + '.');
     return 'nieznany ruch';
-  }
+  };
 
-  function displayResult(argComputerMove, argPlayerMove) {
+  let computerMove = getMoveName(randomNumber);
+  let playerMove = getMoveName(playerInput);
+
+  const displayResult = function (argComputerMove, argPlayerMove) {
     printMessage(
       'Mój ruch to: ' + argComputerMove + ' a Twój ruch to: ' + argPlayerMove
     );
@@ -52,40 +51,40 @@ function playGame(playerInput) {
       printMessage('Ja wygrałem!');
       return 'Ja wygrałem!';
     }
-  }
+  };
 
   return displayResult(computerMove, playerMove);
 }
 
 let count = 0;
 let ccount = 0;
-function scoreOveral(res) {
-  function printPlayerScore() {
-    let plResult = document.querySelector('#pr-0');
+const scoreOveral = function (res) {
+  const printPlayerScore = function () {
+    const plResult = document.querySelector('#pr-0');
     plResult.innerHTML = count;
-  }
+  };
 
-  function printComputerScore() {
-    let cpResult = document.querySelector('#cp-0');
+  const printComputerScore = function () {
+    const cpResult = document.querySelector('#cp-0');
     cpResult.innerHTML = ccount;
-  }
+  };
 
-  function pAddPoint() {
+  const pAddPoint = function () {
     count++;
     printPlayerScore();
-  }
+  };
 
-  function cAddPoint() {
+  const cAddPoint = function () {
     ccount++;
     printComputerScore();
-  }
+  };
 
   if (res == 'Wygrałeś!') {
     pAddPoint();
   } else if (res == 'Ja wygrałem!') {
     cAddPoint();
   }
-}
+};
 
 document.getElementById('play-rock').addEventListener('click', function () {
   scoreOveral(playGame(1));
