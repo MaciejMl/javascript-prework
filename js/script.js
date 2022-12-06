@@ -1,4 +1,4 @@
-function playGame(playerInput) {
+const playGame = function (playerInput) {
   clearMessages();
 
   const randomNumber = Math.floor(Math.random() * 3 + 1);
@@ -54,7 +54,7 @@ function playGame(playerInput) {
   };
 
   return displayResult(computerMove, playerMove);
-}
+};
 
 let count = 0;
 let ccount = 0;
@@ -86,54 +86,17 @@ const scoreOveral = function (res) {
   }
 };
 
-document.getElementById('play-rock').addEventListener('click', function () {
-  scoreOveral(playGame(1));
-});
-document.getElementById('play-paper').addEventListener('click', function () {
-  scoreOveral(playGame(2));
-});
-document.getElementById('play-scissors').addEventListener('click', function () {
-  scoreOveral(playGame(3));
-});
-
-//=============================================
-/*if (res == 'Wygrałeś!') {
-  printMsgPlayer('1');
-}*/
-
-//console.log(res);
-
-/*if (randomNumber == 1) {
-  computerMove = `kamień`;
-} else if (randomNumber == 2) {
-  computerMove = `papier`;
-} else if (randomNumber == 3) {
-  computerMove = `nożyce`;
-} else computerMove;
-
-printMessage('Mój ruch to: ' + computerMove);
-
-if (playerInput == '1') {
-  playerMove = 'kamień';
-} else if (playerInput == '2') {
-  playerMove = 'papier';
-} else if (playerInput == '3') {
-  playerMove = 'nożyce';
-} else playerMove;
-
-printMessage('Twój ruch to: ' + playerMove);
-
-if (playerMove == 'nieznany ruch') {
-  printMessage('Nieznany ruch! Jeszcze raz!');
-} else if (computerMove == playerMove) {
-  printMessage('Remis!');
-} else if (
-  (computerMove == 'kamień' && playerMove == 'papier') ||
-  (computerMove == 'papier' && playerMove == 'nożyce') ||
-  (computerMove == 'nożyce' && playerMove == 'kamień')
-) {
-  printMessage('Wygrałeś!');
-} else {
-  printMessage('Ja wygrałem!');
-}
-*/
+const chooseMove = function () {
+  document.getElementById('play-rock').addEventListener('click', function () {
+    scoreOveral(playGame(1));
+  });
+  document.getElementById('play-paper').addEventListener('click', function () {
+    scoreOveral(playGame(2));
+  });
+  document
+    .getElementById('play-scissors')
+    .addEventListener('click', function () {
+      scoreOveral(playGame(3));
+    });
+};
+chooseMove();
