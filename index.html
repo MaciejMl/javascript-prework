@@ -11,6 +11,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Rajdhani&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -18,7 +23,10 @@
       <div class="container">
         <div class="row">
           <div class="splash-img">
-            <img src="" alt="" />
+            <img
+              src="https://images.pexels.com/photos/11549984/pexels-photo-11549984.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="rock"
+            />
           </div>
           <div class="splash-title">
             <h1>GAME</h1>
@@ -48,16 +56,38 @@
 
     <section class="game">
       <div class="container">
+        <div class="row-title">
+          <div class="buttons-title">
+            <h2>CHOOSE YOUR MOVE</h2>
+          </div>
+          <div class="result-title">
+            <h2>RESULT</h2>
+          </div>
+        </div>
+
         <div class="row">
           <div id="buttons">
-            <button id="play-rock">KAMIEŃ</button>
-            <button id="play-paper">PAPIER</button>
-            <button id="play-scissors">NOŻYCE</button>
+            <button class="btn" id="play-rock">KAMIEŃ</button>
+            <button class="btn" id="play-paper">PAPIER</button>
+            <button class="btn" id="play-scissors">NOŻYCE</button>
           </div>
 
           <div class="game-results">
-            <h3>CPU:</h3>
-            <h3>YOU:</h3>
+            <div class="cpu">
+              <h3>CPU:</h3>
+            </div>
+
+            <div id="cpu-res">
+              <h3 id="cp-0">0</h3>
+            </div>
+
+            <div class="player">
+              <h3>YOU:</h3>
+            </div>
+
+            <div id="player-res">
+              <h3 id="pr-0">0</h3>
+            </div>
           </div>
         </div>
       </div>

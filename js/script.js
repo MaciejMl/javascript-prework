@@ -1,11 +1,11 @@
 function playGame(playerInput) {
   clearMessages();
   let randomNumber = Math.floor(Math.random() * 3 + 1);
+  let computerMove = getMoveName(randomNumber);
+  let playerMove = getMoveName(playerInput);
   /*let playerInput = prompt(
     'Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce'
   );*/
-  let computerMove = getMoveName(randomNumber);
-  let playerMove = getMoveName(playerInput);
 
   console.log('Wylosowana liczba to: ' + randomNumber);
 
@@ -40,33 +40,69 @@ function playGame(playerInput) {
     }
     if (argComputerMove == argPlayerMove) {
       printMessage('Remis!');
-      //return 'Remis!';
-    }
-    if (
+      return 'Remis!';
+    } else if (
       (argComputerMove == 'kamień' && argPlayerMove == 'papier') ||
       (argComputerMove == 'papier' && argPlayerMove == 'nożyce') ||
       (argComputerMove == 'nożyce' && argPlayerMove == 'kamień')
     ) {
       printMessage('Wygrałeś!');
-      //return 'Wygrałeś!';
+      return 'Wygrałeś!';
     } else {
       printMessage('Ja wygrałem!');
-      //return 'Ja wygrałem!';
+      return 'Ja wygrałem!';
     }
   }
 
-  displayResult(computerMove, playerMove);
+  return displayResult(computerMove, playerMove);
+}
+
+let count = 0;
+let ccount = 0;
+function scoreOveral(res) {
+  function printPlayerScore() {
+    let plResult = document.querySelector('#pr-0');
+    plResult.innerHTML = count;
+  }
+
+  function printComputerScore() {
+    let cpResult = document.querySelector('#cp-0');
+    cpResult.innerHTML = ccount;
+  }
+
+  function pAddPoint() {
+    count++;
+    printPlayerScore();
+  }
+
+  function cAddPoint() {
+    ccount++;
+    printComputerScore();
+  }
+
+  if (res == 'Wygrałeś!') {
+    pAddPoint();
+  } else if (res == 'Ja wygrałem!') {
+    cAddPoint();
+  }
 }
 
 document.getElementById('play-rock').addEventListener('click', function () {
-  playGame(1);
+  scoreOveral(playGame(1));
 });
 document.getElementById('play-paper').addEventListener('click', function () {
-  playGame(2);
+  scoreOveral(playGame(2));
 });
 document.getElementById('play-scissors').addEventListener('click', function () {
-  playGame(3);
+  scoreOveral(playGame(3));
 });
+
+//=============================================
+/*if (res == 'Wygrałeś!') {
+  printMsgPlayer('1');
+}*/
+
+//console.log(res);
 
 /*if (randomNumber == 1) {
   computerMove = `kamień`;
